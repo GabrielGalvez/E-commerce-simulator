@@ -10,9 +10,38 @@ for(const producto of productosGabo){
 }
 
 //console.log(productosGabo);
-const carrito = [];
 let totalCompra;
 let contenedor = document.getElementById("misprods");
+let botonFinalizar = document.getElementById("finalizar");
+let carrito =  JSON.parse(localStorage.getItem("carrito")) || [];
+if(carrito.length != 0){
+    console.log("Recuperando carro")
+    dibujarTabla();
+}
+
+//LUXON
+const DateTime = luxon.DateTime;
+//momento en que se ingresa a la web
+const ahora = DateTime.now();
+console.log(ahora.toString());
+console.log(ahora.zoneName);
+console.log(ahora.toLocaleString(DateTime.DATETIME_HUGE_WITH_SECONDS));
+
+
+function dibujarTabla(){
+    for(const prod of carrito){
+        document.getElementById("tablabody").innerHTML += `
+        <tr>
+            <td>${prod.codigo}</td>
+            <td>${prod.nombre}</td>
+            <td>${prod.precio}</td>
+        </tr>
+    `;
+    }
+    totalCarrito = carrito.reduce((acumulador,prod)=> acumulador + prod.precio,0);
+    let infoTotal = document.getElementById("total");
+    infoTotal.innerText="Total a pagar $: "+totalCarrito+"(iva incluido)";
+}
 
 function renderizarProds(){
     for(const prod of productosGabo){
@@ -46,6 +75,7 @@ function renderizarProds(){
 }
 
 renderizarProds();
+
 function agregarAlCarrito(newProd){
     carrito.push(newProd);
     console.table(carrito);
@@ -60,6 +90,30 @@ function agregarAlCarrito(newProd){
     totalCompra = carrito.reduce((acumulador,prod)=>acumulador + prod.precio,0);
     let infoTotal = document.getElementById("total");
     infoTotal.innerText="Total a pagar: $"+totalCompra+"(iva incluido)";
+    //storage
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+}
+botonFinalizar.onclick = () => {
+    carrito = [];
+    document.getElementById("tablabody").innerHTML="";
+    let infoTotal = document.getElementById("total");
+    infoTotal.innerText="Total a pagar $: ";
+    Toastify({
+        text: "Pronto recibirá un mail de confirmacion",
+        duration: 3000,
+        gravity: 'bottom',
+        position: 'left',
+        style: {
+            background: 'linear-gradient(to right, #00b09b, #96c92d)'
+        }
+    }).showToast();
+
+    //Quiero medir intevalo
+    const cierreDeCompra=DateTime.now();
+    const Interval = luxon.Interval;
+    const tiempo = Interval.fromDateTimes(ahora,cierreDeCompra);
+    console.log("Tardaste "+tiempo.length('seconds')+" segundos en comprar");
+    localStorage.removeItem("carrito");
 }
 
 //Dark o Light mode con localStorage para q quede almacenado el mode
