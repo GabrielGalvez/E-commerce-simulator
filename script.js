@@ -91,9 +91,9 @@ function agregarAlCarrito(newProd) {
             <td><button class="btn btn-light" onclick="eliminar(event)">🗑️</button></td>
         </tr>
     `;
-    totalCompra = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
+    totalCarrito = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
     let infoTotal = document.getElementById("total");
-    infoTotal.innerText = "Total a pagar: $" + totalCompra + "(iva incluido)";
+    infoTotal.innerText = "Total a pagar: $" + totalCarrito;
     //storage
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
