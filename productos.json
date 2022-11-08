@@ -1,25 +1,26 @@
-[{
-    "codigo": 1,
-    "foto": "./images/mouseLogitech.jpg",
-    "nombre": "Mouse",
-    "precio": 3000
-},
-{
-    "codigo": 2,
-    "foto": "./images/joyStick.jpg",
-    "nombre": "Joystick",
-    "precio": 4000
-},
-{
-    "codigo": 3,
-    "foto": "./images/monitorSamsung.jpg",
-    "nombre": "Monitor",
-    "precio": 10000
-},
-{
-    "codigo": 4,
-    "foto": "./images/laptop.jpg",
-    "nombre": "Laptop",
-    "precio": 30000
-}
+[
+    {
+        "codigo": 1,
+        "foto": "./images/mouseLogitech.jpg",
+        "nombre": "Mouse",
+        "precio": 3000
+    },
+    {
+        "codigo": 2,
+        "foto": "./images/joyStick.jpg",
+        "nombre": "Joystick",
+        "precio": 4000
+    },
+    {
+        "codigo": 3,
+        "foto": "./images/monitorSamsung.jpg",
+        "nombre": "Monitor",
+        "precio": 10000
+    },
+    {
+        "codigo": 4,
+        "foto": "./images/laptop.jpg",
+        "nombre": "Laptop",
+        "precio": 30000
+    }
 ]

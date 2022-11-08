@@ -11,7 +11,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 //    dibujarTabla();
 //}
 
-(carrito.length != 0) && dibujarTabla();
+(carrito.length != 0)&&dibujarTabla();
 obtenerDolar();
 //LUXON
 const DateTime = luxon.DateTime;
