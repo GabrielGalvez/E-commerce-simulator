@@ -87,8 +87,8 @@ function agregarAlCarrito(newProd) {
         <tr class="light">
             <td>${newProd.codigo}</td>
             <td>${newProd.nombre}</td>
-            <td>$ ${newProd.precio}(iva incluido)</td>
-            <td><button class="btn btn-light" onclick="eliminar(event)">🗑️</button></td>
+            <td>${newProd.precio}</td>
+            <td><button class="btn " onclick="eliminar(event)">🗑️</button></td>
         </tr>
     `;
     totalCarrito = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
@@ -102,11 +102,8 @@ function agregarAlCarrito(newProd) {
 function eliminar(ev) {
     console.log(ev);
     let fila = ev.target.parentElement.parentElement;
-    console.log(fila);
-    let id = fila.children[0].innerText;
-    console.log(id);
+    let codigo = fila.children[0].innerText;
     let indice = carrito.findIndex(prod => prod.codigo == codigo);
-    console.log(indice)
     //remueve el producto del carro
     carrito.splice(indice, 1);
     console.table(carrito);
