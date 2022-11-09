@@ -31,7 +31,7 @@ function dibujarTabla() {
     let infoTotal = document.getElementById("total");
     infoTotal.innerText = "Total a pagar $: " + totalCarrito ;
 }
-fila_prueba
+
 function renderizarProds() {
     for (const prod of productosJSON) {
         contenedor.innerHTML += `
@@ -68,7 +68,7 @@ function renderizarProds() {
 function agregarAlCarrito(newProd) {
     carrito.push(newProd);
     console.table(carrito);
-    //alert("El producto: "+newProd.nombre+" ha sido agregado al carrito con exito!");
+
     //SWEET ALERT
     Swal.fire({
         title: newProd.nombre,
@@ -85,12 +85,13 @@ function agregarAlCarrito(newProd) {
             <td>${newProd.codigo}</td>
             <td>${newProd.nombre}</td>
             <td>${newProd.precio}</td>
-            <td><button class="btn " onclick="eliminar(event)">🗑️</button></td>
+            <td><button class="btn" onclick="eliminar(event)">🗑️</button></td>
         </tr>
     `;
     totalCarrito = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
     let infoTotal = document.getElementById("total");
     infoTotal.innerText = "Total a pagar: $" + totalCarrito;
+
     //storage
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
@@ -134,6 +135,7 @@ async function obtenerJSON() {
     const resp = await fetch(URLJSON);
     const data = await resp.json();
     productosJSON = data;
+    
     //ya tengo el dolar y los productos, renderizo las cartas
     renderizarProds();
 }
