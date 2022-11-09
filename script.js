@@ -6,10 +6,7 @@ let totalCarrito;
 let contenedor = document.getElementById("misprods");
 let botonFinalizar = document.getElementById("finalizar");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-//if(carrito.length != 0){
-//    console.log("Recuperando carro")
-//    dibujarTabla();
-//}
+
 
 (carrito.length != 0)&&dibujarTabla();
 obtenerDolar();
@@ -123,7 +120,6 @@ function obtenerDolar() {
         .then(respuesta => respuesta.json())
         .then(cotizaciones => {
             const dolarBlue = cotizaciones.blue;
-            console.log(dolarBlue);
             document.getElementById("fila_prueba").innerHTML += `
                 <p>Dolar compra: $ ${dolarBlue.value_buy} Dolar venta: $ ${dolarBlue.value_sell}</p>
             `;
