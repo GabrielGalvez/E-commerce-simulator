@@ -22,5 +22,29 @@
         "foto": "./images/laptop.jpg",
         "nombre": "Laptop",
         "precio": 30000
+    },
+    {
+        "codigo": 5,
+        "foto": "./images/discoduro.jpg",
+        "nombre": "Disco duro",
+        "precio": 15000
+    },
+    {
+        "codigo": 6,
+        "foto": "./images/procesador.jpg",
+        "nombre": "Procesador",
+        "precio": 18000
+    },
+    {
+        "codigo": 7,
+        "foto": "./images/motherboard.jpg",
+        "nombre": "Motherboard",
+        "precio": 24000
+    },
+    {
+        "codigo": 8,
+        "foto": "./images/sillagamer.jpg",
+        "nombre": "Silla",
+        "precio": 27000
     }
 ]
