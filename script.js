@@ -29,9 +29,9 @@ function dibujarTabla() {
     }
     totalCarrito = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);
     let infoTotal = document.getElementById("total");
-    infoTotal.innerText = "Total a pagar $: " + totalCarrito + "(iva incluido)";
+    infoTotal.innerText = "Total a pagar $: " + totalCarrito ;
 }
-
+fila_prueba
 function renderizarProds() {
     for (const prod of productosJSON) {
         contenedor.innerHTML += `
