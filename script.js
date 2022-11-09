@@ -72,7 +72,7 @@ function agregarAlCarrito(newProd) {
     //SWEET ALERT
     Swal.fire({
         title: newProd.nombre,
-        text: 'Agregado al carrito',
+        text: 'Agregado al carrito!',
         imageUrl: newProd.foto,
         imageWidth: 200,
         imageHeight: 200,
@@ -144,7 +144,7 @@ async function obtenerJSON() {
 botonFinalizar.onclick = () => {
     if (carrito.length == 0){
         Swal.fire({
-            title: 'El carro está vacío',
+            title: 'Tu carro se encuentra vacío',
             text: 'compre algun producto',
             icon: 'error',
             showConfirmButton: false,
@@ -156,7 +156,7 @@ botonFinalizar.onclick = () => {
         let infoTotal = document.getElementById("total");
         infoTotal.innerText = "Total a pagar $: ";
         Toastify({
-            text: "Pronto recibirá un mail de confirmacion",
+            text: "Pronto vas a recibir un mail de confirmacion, gracias por elegirnos!",
             duration: 3000,
             gravity: 'bottom',
             position: 'left',
@@ -174,38 +174,3 @@ botonFinalizar.onclick = () => {
     }
 }
 
-    //Dark o Light mode con localStorage para q quede almacenado el mode
-
-    let boton = document.getElementById("mode");
-    let principal = document.getElementById("principal");
-    let modo = localStorage.getItem("modo");
-
-    //Primer renderizado
-    if (modo != null) {
-        document.body.className = modo;
-        principal.className = "position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center " + modo;
-        if (modo == "light") {
-            boton.innerHTML = "Dark mode";
-        } else {
-            boton.innerHTML = "Light mode";
-        }
-    } else {
-        modo = "light";
-    }
-
-    boton.onclick = () => {
-        if (modo == "light") {
-            document.body.className = "dark";
-            principal.classList.remove("light");
-            principal.classList.add("principal");
-            boton.innerText = "Light Mode";
-            modo = "dark";
-        } else {
-            document.body.className = "light";
-            principal.classList.remove("dark");
-            principal.classList.add("principal");
-            boton.innerText = "Dark Mode";
-            modo = "light";
-        }
-        localStorage.setItem("modo", modo);
-    }
