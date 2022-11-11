@@ -10,8 +10,8 @@ también la función para eliminar un producto determinado del carrito de compra
 Con respecto al dark-light mode, lo tengo separado en un archivo "darkLightMode.js" para q quede mas prolijo.
 Tuve algunos problemas cuando modifiqué mi proyecto, agregando los productos.json y los eventos del dolar, ya q me dejó de funcionar 
 el dark mode, pero lo logré solucionar cambiando de div al boton, y agregué un style con background color a la tabla de producto del carrito porque
-cuando cerraba la ventana, al abrirlo con el dark mode en el storage,   me quedaban los productos con fondo oscuro, así q hay un par de modificaciones 
-q hice, agregando también la clase light de estilos.css al div q contiene los productos.
+cuando cerraba la ventana, al abrirlo con el dark mode en el storage,   me quedaban los productos que tenia agregados al carrito con fondo oscuro,
+ así q hay un par de modificaciones q hice, agregando también la clase light de estilos.css al div q contiene los productos.
 
 Bueno, como verá los productos también quedan guardados en el localStorage, al igual q el modo del dark-light.
 Espero q le guste y desde ya muchas gracias!
