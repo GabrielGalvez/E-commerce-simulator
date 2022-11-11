@@ -1,7 +1,6 @@
 let productosJSON = [];
 let dolarCompra;
 
-//console.log(productosGabo);
 let totalCarrito;
 let contenedor = document.getElementById("misprods");
 let botonFinalizar = document.getElementById("finalizar");
