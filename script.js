@@ -55,7 +55,7 @@ function renderizarProds() {
         boton.onmouseout = () => {
             boton.className = "btn btn-primary";
         }
-        //evento para cada boton
+        //Evento para cada boton
         document.getElementById(`btn${prod.codigo}`).addEventListener("click", function () {
             agregarAlCarrito(prod);
         });
